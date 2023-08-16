@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Index</title>
+    <link media="all" rel="stylesheet" th:href="@{/css/style.css}" type="text/css"/>
+</head>
+<body>
+
+    <div th:each="person : ${people}">
+        <a th:href="@{/people/{id}(id=${person.getPersonId()})}" th:text="${person.getFio() + ', ' + person.getYearOfBirth()}">User</a>
+    </div>
+
+    <hr>
+
+    <button type="submit"><a href="/people/new">Добавить человека</a></button>
+
+    <button type="submit"><a href="/book">К списку книг</a></button>
+
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Registration page</title>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+    <link href="https://getbootstrap.com/docs/4.0/examples/signin/signin.css" rel="stylesheet" crossorigin="anonymous">
+</head>
+<body>
+    <div class="container">
+        <form th:method="POST" th:action="@{/auth/registration}" th:object="${person}" class="form-signin">
+            <h2 class="form-signin-heading">Please sign up</h2>
+            <div th:if="${param.error}" class="alert alert-danger">Invalid username or password</div>
+            <p>
+                <label for="username" class="sr-only">Email</label>
+                <input type="email" id="username" name="username" class="form-control" placeholder="Email" required="" autofocus="">
+            </p>
+            <p>
+                <label for="password" class="sr-only">Password</label>
+                <input type="password" id="password" name="password" class="form-control" placeholder="Password" required="">
+            </p>
+            <button class="btn btn-lg btn-primary btn-block" type="submit">Sign up</button>
+        </form>
+    </div>
+</body>
+</html>

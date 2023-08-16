@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>New person</title>
+    <link media="all" rel="stylesheet" th:href="@{/css/style.css}" type="text/css"/>
+</head>
+<body>
+
+<form th:method="POST" th:action="@{/book}" th:object="${bookImageWrapper}" enctype="multipart/form-data">
+    <label for="name">Введите название</label>
+    <input type="text" th:field="*{book.name}" id="name">
+    <p style="color:red" th:if="${#fields.hasErrors('book.name')}" th:errors="*{book.name}">Full name error</p>
+    <br>
+
+    <label for="author">Введите автора</label>
+    <input type="text" th:field="*{book.author}" id="author">
+    <p style="color:red" th:if="${#fields.hasErrors('book.author')}" th:errors="*{book.author}">Author error</p>
+    <br>
+
+    <label for="yearOfBirth">Введите год выпуска</label>
+    <input type="text" th:field="*{book.yearOfProduction}" id="yearOfBirth">
+    <p style="color:red" th:if="${#fields.hasErrors('book.yearOfProduction')}" th:errors="*{book.yearOfProduction}">yearOfProduction error</p>
+    <br>
+
+    <p><b>Загрузка изображения</b></p>
+    <div>
+        <label for="nameOfBook">Name:</label>
+        <input type="text" id="nameOfBook" name="imageName" th:field="*{image.imageName}"/>
+        <span th:if="${#fields.hasErrors('image.imageName')}" th:errors="*{image.imageName}"></span>
+        <span th:if="${#fields.hasErrors('book.imageBookName')}" th:errors="*{book.imageBookName}"></span>
+    </div>
+    <div>
+        <label for="file">Image:</label>
+        <input type="file" id="file" name="file" th:field="*{image.file}"/>
+        <span th:if="${#fields.hasErrors('image.file')}" th:errors="*{image.file}"></span>
+    </div>
+
+    <button type="submit">Создать</button>
+</form>
+
+</body>
+</html>

@@ -1,0 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+*{
+    font-family: 'poppins',sans-serif;
+}
+button {
+    height: 35px;
+    width: 150px;
+}
+
+a {
+    text-decoration: none;
+}

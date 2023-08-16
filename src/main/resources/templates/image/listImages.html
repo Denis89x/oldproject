@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="UTF-8">
+	<title>List images</title>
+</head>
+<body>
+
+  <h1>List Images</h1>
+  <table>
+    <tr th:each="image : ${images}">
+      <td><a th:href="@{/image/{imageName}(imageName=${image})}"><img th:src="@{/image/{imageName}(imageName=${image})}" width="200"/></a></td>
+    </tr>
+  </table>
+  <a th:href="@{/uploadImage}">Upload Image</a>
+
+</body>
+</html>
