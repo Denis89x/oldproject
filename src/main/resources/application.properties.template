@@ -1,0 +1,12 @@
+spring.datasource.driverClassName=
+spring.datasource.url=
+spring.datasource.username=
+spring.datasource.password=
+
+spring.jpa.properties.hibernate.dialect=
+spring.jpa.properties.hibernate.show_sql=
+
+dropbox.accessToken=
+
+spring.thymeleaf.prefix=classpath:/templates/
+spring.thymeleaf.suffix=.html
